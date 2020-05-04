@@ -43,3 +43,9 @@
 .bosluk{
     margin-top: 70px;
 }
+
+.slider{
+   max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
