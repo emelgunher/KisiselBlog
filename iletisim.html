@@ -16,7 +16,7 @@
     
   <body>
       
-   <nav class="container-fluid navbar navbar-expand-lg navbar-light navbarYeni">
+   <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark navbarYeni">
   <a class="navbar-brand isim" href="index.html">Emel Günher</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,18 +40,83 @@
         </div>
       </li>
          <li class="nav-item">
-        <a class="nav-link" href="iletisim.html">Giriş</a>
+        <a class="nav-link" href="iletisim.html">İletişim</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="login.html">Giriş</a>
       </li>
     </ul>
   </div>
 </nav>
+      <script>
+      function isValid(frm)
+{
+    var kadi = frm.kadi.value;
+    var telefon = frm.telefon.value;
+    var email = frm.email.value;
+    var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+    if ( kadi==null || kadi=="" || kadi.length < 4 )
+    {
+        alert("Kullanıcı adı 4 karakterden az olamaz");
+        return false;
+    }
+    if ( telefon==null || telefon=="" || telefon.length < 10 )
+    {
+        alert("Telefon numarası 10 karakterden az olamaz");
+        return false;
+    }
+    if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+    return true;
+}
       
+     </script> 
       
+<div class="row bosluk" style="padding-left: 46px;">
+        <div class="col-sm-8 mb-4" >
+            <h2>______Öneri ve Şikayetleriniz İçin</h2>
+            <form name="sentMessage" onsubmit="return isValid(this)" method="post">
+                <div class="control-group form-group bosluk">
+                    <div class="controls">
+                        <label>Ad-Soyad:</label>
+                        <input type="text" class="form-control" name="kadi" >
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label>Telefon:</label>
+                        <input type="tel" class="form-control" name="telefon" >
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label>E-Mail:</label>
+                        <input type="email" class="form-control" id="email" required data-validation-required-message="Lütfen e-mail giriniz.">
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label>Yorum:</label>
+                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Lütfen mesajınızı yazınız." maxlength="999" style="resize:none"></textarea>
+                    </div>
+                </div>
+                <div id="success"></div>
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">Gönder</button>
+            </form>
+        </div>
 
+    </div>
       
-      
-      
-      
+         
+    <footer>
+        <div class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark" >
+        </div>
+    </footer>    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.5.0.min.js"></script>
