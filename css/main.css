@@ -13,8 +13,7 @@
 
 .imgEmel{
     padding-top: 20px;
-    padding-left: 30px;
-    width: 700px;
+    width: 650px;
     height: 700px;
    /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
    /* filter: grayscale(100%); */
@@ -50,8 +49,7 @@
 }
 
 .imgMiras{
-    width: 750px;
+    width: 650px;
     height: 600px;
     padding-top: 20px;
-    padding-left: 30px;
 }
